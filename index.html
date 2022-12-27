@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+    <style type="text/css">
+        body,
+        div,
+        h2,
+        p,
+        audio {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+        }
+
+        .wrapper {
+            height: 100%;
+            background: rgb(27, 0, 36);
+            background: rgb(229, 167, 244);
+            background: linear-gradient(to bottom, rgba(252,236,252,1) 0%,rgba(251,166,225,1) 50%,rgba(253,137,215,1) 51%,rgba(255,124,216,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            /* auto(default), all(클릭으로 선택), none, text(글자선택가능) */
+        }
+
+        .play-body {
+            width: 380px;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .m-top {
+            margin-bottom: 25px;
+        }
+
+        .m-top>h2 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #252525;
+            text-align: center;
+            background: rgb(6, 36, 0);
+            background: linear-gradient(to bottom, rgba(252,236,252,1) 0%,rgba(251,166,225,1) 50%,rgba(253,137,215,1) 51%,rgba(255,124,216,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .m-img {
+            width: 100%;
+            height: 260px;
+            border-radius: 15px;
+            background: #fc9;
+            overflow: hidden;
+        }
+
+        .m-img>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /*fill(비율유지없이가득채움), contain(비율유지,전체이미지), cover(비율유지가득), none(크기조절없음), scale-down(none,contain중 크기 작은 값)*/
+            object-position: center bottom;
+            /*left center right top center bottom % px*/
+        }
+
+        .m-info {
+            font-size: 20px;
+            margin: 30px;
+            text-align: center;
+        }
+
+        .m-info .artist {
+            font-size: 18px;
+            color: #626263;
+            font-weight: 300;
+        }
+
+        .m-progress {
+            height: 6px;
+            width: 100%;
+            border-radius: 3px;
+            background: #e0e0e0;
+        }
+
+        .m-progress .bar {
+            height: inherit;
+            width: 10%;
+            /* 0% */
+            border-radius: 3px;
+            background: #230975;
+        }
+
+        .m-progress>.timer {
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .m-control {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .m-control span {
+            font-size: 28px;
+        }
+
+        .m-control .play-pause {
+            width: 54px;
+            height: 54px;
+            background: #999;
+            border-radius: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="play-body">
+            <div class="m-top">
+                <h2>Music Player</h2>
+            </div>
+            <div class="m-img">
+                <img src="images/album1.jpg" alt="앨범1">
+            </div>
+            <div class="m-info">
+                <p class="name">Alone</p>
+                <p class="artist">color Out</p>
+            </div>
+            <div class="m-progress">
+                <div class="bar"><audio id="main-audio" src="songs/Alone.mp3"></audio></div>
+                <div class="timer">
+                    <span class="current">0:00</span>
+                    <span class="duration">0:00</span>
+                </div>
+            </div>
+            <div class="m-control">
+                <span id="repeat-btn" class="material-icons">repeat</span>
+                <span id="prev-btn" class="material-icons">skip_previous</span>
+                <div class="play-pause">
+                    <span id="play-btn" class="material-icons">play_arrow</span>
+                </div>
+                <div id="next-btn" class="material-icons">skip_next</div>
+                <span id="list-btn" class="material-icons">queue_music</span>
+            </div>
+        </div>
+    </div>
+    <script src="event.js"></script>
+    <script>
+        const musicWrap = document.querySelector(".wrapper");
+const musicAudio = musicWrap.querySelector('#main-audio');
+const playBtn = musicWrap.querySelector('#play-btn');
+const musicPlay = () => {
+    playBtn.innerHTML = "pause";
+    musicAudio.play();
+}
+const musicPause = () => {
+    playBtn.innerHTML = "play_arrow"
+    musicAudio.pause();
+}
+playBtn.addEventListener("click", ()=>{
+    let getText = playBtn.innerText; //play.Btn.innerHTML
+    (getText=="pause")? musicPause() : musicPlay();
+});
+
+let list_index=0; // musicList[0]-> musicList[5] 순환호출
+const albumImg=musicWrap.querySelector(".m-img > img")
+const m_name=musicWrap.querySelector(".name");
+const m_artist=musicWrap.querySelector(".artist");
+const loadMusic=(num)=>{
+    albumImg.src=`images/${musicList[num].img}.jpg`;//img정보
+    musicAudio.src=`songs/${musicList[num].audio}.mp3`//audio경로
+    m_name.innerText=musicList[num].name;//name글자정보
+    m_artist.innerText=musicList[num].artist//artist글자정보
+}
+window.addEventListener("load",()=>{
+    loadMusic(list_index);
+});
+const progressive = musicWrap.querySelector(".m-progress");
+const progressBar = progressive.querySelector(".bar");
+const playTime = progressive.querySelector('.current');
+const totalTime = progressive.querySelector('.duration');
+// this, event.target, event.currentTarget
+musicAudio.addEventListener("timeupdate", (event) => {
+    let current = event.target.currentTime;
+    let duration = event.target.duration;
+    let progressRatio = (current / duration) * 100; //백분율 계산
+    progressBar.style.width = `${progressRatio}%`
+
+    let currentMin=Math.floor(current/60);
+    let currentSec=Math.floor(current%60);
+    if(currentSec<10){currentSec=`0${currentSec}`;}
+    playTime.innerHTML=`${currentMin}:${currentSec}`;
+
+    musicAudio.addEventListener("loadeddata", (e) => { console.log("ch");
+        let totalDuration = musicAudio.duration;
+        console.log(totalDuration, duration)
+        let totalMin = Math.floor(totalDuration/60);
+        let totalSec = Math.floor(totalDuration%60);
+        if (totalSec < 10) { totalSec = `0${totalSec}`; } // "0"+totalSec
+        totalTime.innerHTML = `${totalMin}:${totalSec}`
+        //전체시간표시
+    });
+});
+
+const prveBtn=musicWrap.querySelector('#prev-btn');
+const nexBtn=musicWrap.querySelector('#next-btn');
+const prveMusic=()=>{
+    list_index--;
+    if(list_index<0){list_index=musicList.length-1;}
+    loadMusic(list_index);
+    musicPlay();
+}   
+const nextMusic=()=>{
+    list_index++;
+    if(list_index>=musicList.length){list_index=0;}
+    //(list_index>=music.length)? list_index=0:list_index=list_index;
+    loadMusic(list_index);
+    musicPlay();
+}
+prveBtn.addEventListener("click",()=>{
+    prveMusic();
+});
+nexBtn.addEventListener("click",()=>{
+    nextMusic();
+});
+/*
+    obj.clientWidth, clientHeight (padding포함 크기인식)
+    obj.offsetWidth, offsetHeight (bordervhgka 크기인식)
+    obj.getBoundingClientRect() - .width / .height (border+padding포함)
+*/
+progressive.addEventListener("click",(e)=>{
+    let maxWidth=progressive.clientWidth;
+    let clickXposition=e.offsetX;
+    let totalDuration=musicAudio.duration;
+    musicAudio.currentTime=(clickXposition/maxWidth)*totalDuration;
+    musicPlay();
+});
+const mRepaet=musicWrap.querySelector('#repeat-btn');
+musicAudio.addEventListener("ended",()=>{
+    let getText=mRepaet.innerText;
+    if(getText=="repeat"){nextMusic();}
+});
+
+    </script>   
+</body>
+
+</html>
