@@ -1,0 +1,7 @@
+<svg width="260" height="64" viewBox="0 0 260 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Resume Text Image</title>
+  <desc id="desc">Stylized resume text badge</desc>
+  <rect x="2" y="2" width="256" height="60" rx="14" fill="#111827"/>
+  <rect x="2" y="2" width="256" height="60" rx="14" stroke="#374151" stroke-width="2"/>
+  <text x="130" y="41" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1.5" fill="#F9FAFB">RESUME</text>
+</svg>
