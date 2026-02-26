@@ -2,10 +2,8 @@
 
 # 👋 안녕하세요, 프론트엔드 개발자 김귀영입니다!
 
-
 **React / Next.js / TypeScript에 집중하고 있습니다**  
 사용자 경험을 중시하며, 깔끔하고 효율적인 코드를 작성하는 것을 추구합니다.
-
 
 </div>
 
@@ -13,13 +11,29 @@
 
 ## 🚀 About Me
 
-- 🌱 **현재 학습 중**: React, Next.js, TypeScript를 중심으로 프론트엔드 개발 역량을 강화하고 있습니다
+- 🌱 **현재 학습 중**: React, Next.js, TypeScript 기반의 실무형 프론트엔드 역량 강화
 - 💡 **관심사**: 사용자 경험 개선, 성능 최적화, 코드 품질 향상
-- 🎯 **목표**: 실무에서 바로 활용 가능한 기술 스택을 단계적으로 학습하며 성장하고 있습니다
+- 🎯 **목표**: 비즈니스 요구사항을 사용자 가치로 연결하는 개발자로 성장
+
+<div align="center">
+
+### 🔗 Links
+
+<a href="https://www.rallit.com/resumes/1608154@guiyoung22/%EA%B9%80%EA%B7%80%EC%98%81" target="_blank" rel="noopener noreferrer">
+  <img src="./resume-text.svg" alt="Resume" height="34" />
+</a>
+&nbsp;&nbsp;
+<a href="https://resume-psi-plum.vercel.app/" target="_blank" rel="noopener noreferrer">
+  <img src="./portfolio-text.svg" alt="Portfolio" height="34" />
+</a>
+
+</div>
 
 ---
 
 ## 🛠️ Tech Stack
+
+### Core
 
 ![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
@@ -27,19 +41,26 @@
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Cursor](https://img.shields.io/badge/-Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)
+
+<details>
+<summary>More</summary>
+
 ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)
 ![Zustand](https://img.shields.io/badge/-Zustand-443F37?style=for-the-badge&logo=zustand&logoColor=white)
 ![Context API](https://img.shields.io/badge/-Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Styled Components](https://img.shields.io/badge/-Styled%20Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Cursor](https://img.shields.io/badge/-Cursor-000000?style=for-the-badge&logoColor=white)
 
+</details>
 
+---
 
 ## 📬 Contact
 
 <div align="center">
 
-💌 **Email**: [guiyoung22@naver.com](mailto:guiyoung22@naver.com)
+💌 **Email**: [guiyoung22@naver.com](mailto:guiyoung22@naver.com)  
+🌐 **Portfolio**: [resume-psi-plum.vercel.app](https://resume-psi-plum.vercel.app/)
 
 </div>
 
