@@ -19,7 +19,7 @@
 
 ### 🔗 Links
 
-<a href="https://www.rallit.com/resumes/1608154@guiyoung22/%EA%B9%80%EA%B7%80%EC%98%81" target="_blank" rel="noopener noreferrer">
+<a href="https://www.rallit.com/resumes/1608154@guiyoung22/%EA%B9%80%EA%B7%80%EC%98%81?theme=STANDARD" target="_blank" rel="noopener noreferrer">
   <img src="./resume-text.svg" alt="Resume" height="34" />
 </a>
 &nbsp;&nbsp;
